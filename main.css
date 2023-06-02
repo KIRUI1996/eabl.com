@@ -1,13 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 img {
   width: 70px;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 BODY {
-  background-color: lightblue;
+  background-color: #f0f0f0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  align-items: center;
+  padding: 0 70px;
+}
+header nav {
+  display: flex;
+}
+header nav a {
+  display: block;
+  padding: 20px 16px;
+  text-transform: uppercase;
+}
+header nav a:hover {
+  background-color: crimson;
+}
+header > button {
+  background-color: none;
+  border: none;
+  border-left: 4px solid;
+  padding-left: 25px;
+}
+section {
+  padding: 0 70px;
+}
+.intro {
+  height: 470px;
+  background-image: url(./Images/EABL_100banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(red, green, blue, alpha);
+  z-index: 1;
+}
+.intro h1,
+.intro a {
+  position: relative;
+  color: white;
+  z-index: 3;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  animation: slide-down 0.6s ease-in forwards;
+}
+.intro a {
+  margin: 30px 0 50px 0;
+  font-size: 18px;
+  background-color: crimson;
+  width: max-content;
+  padding: 10px 20px;
+  transition: backgraund-color 0.2s linear;
+  animation: slide-up 0.6s ease-in forwards;
+}
+.intro a:hover {
+  background-color: #1779ba;
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
